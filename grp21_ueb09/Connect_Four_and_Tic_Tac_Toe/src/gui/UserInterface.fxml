@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.UserInterfaceController">
+    <center>
+        <GridPane fx:id="grdPn" onMouseClicked="#onMouseClickGridPane" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+    </center>
+    <right>
+        <VBox fx:id="VBxRight" alignment="CENTER" prefHeight="200.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="lblstcCurrentPlayer" text="Current Player">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblCurrentPlayer">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <ImageView fx:id="imgCurrPlayer" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                <Label fx:id="lblWinner" text="Winner&#10;is&#10;Player 2" textAlignment="CENTER" textFill="#008cff">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+        </VBox>
+    </right>
+    <left>
+        <BorderPane prefHeight="213.0" prefWidth="127.0" BorderPane.alignment="CENTER">
+            <top>
+                <Button fx:id="btnNG" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="20.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleBtnGamePlay" text="New Game" BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </BorderPane.margin>
+                </Button>
+            </top>
+            <bottom>
+                <VBox fx:id="VBxLeft" prefHeight="264.0" prefWidth="127.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <RadioButton fx:id="RdBtnTTT" mnemonicParsing="false" onAction="#ChosenGame" selected="true" text="Tic Tac Toe">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                            <toggleGroup>
+                                <ToggleGroup fx:id="RdBtnGameType" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="RdBtnCF" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ChosenGame" text="Connect Four" toggleGroup="$RdBtnGameType">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                        </RadioButton>
+                        <Label text="Player 1">
+                            <VBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtfldPlayer1" text="Player 1">
+                            <VBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                            </VBox.margin></TextField>
+                        <Label text="Player 2">
+                            <VBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtfldPlayer2" text="Player 2">
+                            <VBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                            </VBox.margin></TextField>
+                        <Button fx:id="btnSG" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="20.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleBtnGamePlay" text="Start Game">
+                            <VBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+            </bottom>
+        </BorderPane>
+    </left>
+</BorderPane>
